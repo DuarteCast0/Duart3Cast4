@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost Nature - Jogo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Cabeçalho do Jogo -->
+        <div class="game-header">
+            <h1 class="game-title">Lost Nature</h1>
+            <div class="game-stats">
+                <div class="stat">Pontos: <span id="score">0</span></div>
+                <div class="stat">Nível: <span id="level">1</span></div>
+                <div class="stat">Saúde: <span id="health">100</span>%</div>
+            </div>
+        </div>
+
+        <!-- Área de Jogo -->
+        <div class="game-area">
+            <canvas id="gameCanvas" width="1200" height="600"></canvas>
+        </div>
+
+        <!-- Painel de Controle -->
+        <div class="game-controls">
+            <p>Use as setas ou WASD para mover | ESPAÇO para pular | Pressione ESC para pausar</p>
+        </div>
+
+        <!-- Tela de Pausa -->
+        <div id="pauseScreen" class="pause-screen" style="display: none;">
+            <div class="pause-modal">
+                <h1 class="pause-title">PAUSADO</h1>
+                <button class="pause-button" onclick="openPauseOptions()">Opções</button>
+                <button class="pause-button" onclick="resumeGame()">Continuar</button>
+                <button class="pause-button" onclick="backToMainMenu()">Menu Principal</button>
+            </div>
+        </div>
+
+        <!-- Tela de Game Over -->
+        <div id="gameOverScreen" class="game-over-screen" style="display: none;">
+            <div class="game-over-modal">
+                <h1 class="game-over-title">YOU LOST</h1>
+                <div class="game-over-stats">
+                    <p>Pontuação Final: <span id="finalScore">0</span></p>
+                    <p>Nível Alcançado: <span id="finalLevel">1</span></p>
+                </div>
+                <button class="game-over-button" onclick="restartGame()">Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game-script.js"></script>
+</body>
+</html>
